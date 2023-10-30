@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <h1>
+        EECS 348 Lab 7 Practice 2
+        </h1>
+    </head>
+
+    <body>
+        <style>
+            #paragraph  {
+                border-style: solid;
+                border-width: 5px;
+            }
+        </style>
+    <div id="paragraph">This is some text that doesnt really mean a whole lot. Just wait, it will be really cool! Just change the values in the boxes and press the button!</div>
+    <p>Border R Value (0-255):<input type="text" min = "0" max="255" id="borderR" value=""></p>
+    <p>Border G Value (0-255):<input type="text" min = "0" max="255" id="borderG" value=""></p>
+    <p>Border B Value (0-255):<input type="text" min = "0" max="255" id="borderB" value=""></p>   
+
+    <p>Border Width:<input type="text" id="borderWidth"></p>  
+    
+    <p>Background R Value (0-255):<input type="text" min = "0" max="255"  id="backgroundR"></p>
+    <p>Background G Value (0-255):<input type="text" min = "0" max="255" id="backgroundG"></p>
+    <p>Background B Value (0-255):<input type="text" min = "0" max="255" id="backgroundB"></p>
+
+    <button onclick="update_display()">Change the colors and border width!</button>
+    <script>
+        function update_display()
+        {
+            var borderRed = document.getElementById("borderR").value;
+            var borderGreen = document.getElementById("borderG").value;
+            var borderBlue = document.getElementById("borderB").value;
+
+            var bwidth = document.getElementById("borderWidth").value;
+
+            var backgroundRed = document.getElementById("backgroundR").value;
+            var backgroundGreen = document.getElementById("backgroundG").value;
+            var backgroundBlue = document.getElementById("backgroundB").value;
+
+
+            
+            var text = document.getElementById("paragraph");
+            text.style.borderWidth = bwidth
+            text.style.backgroundColor = `rgb(${backgroundRed}, ${backgroundGreen}, ${backgroundBlue})`;
+            text.style.borderColor = `rgb(${borderRed}, ${borderGreen}, ${borderBlue})`;
+        }
+
+        
+    </script>
+
+    
+    </body>
+</html>
